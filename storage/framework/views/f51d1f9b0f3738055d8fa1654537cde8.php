@@ -1,4 +1,13 @@
-<x-guest-layout>
+<?php if (isset($component)) { $__componentOriginal69dc84650370d1d4dc1b42d016d7226b = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal69dc84650370d1d4dc1b42d016d7226b = $attributes; } ?>
+<?php $component = App\View\Components\GuestLayout::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('guest-layout'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\App\View\Components\GuestLayout::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
 
     <!-- page-title  -->
     <div class="page-title home01">
@@ -406,14 +415,14 @@
 
                         data-space="15">
                         <div class="swiper-wrapper tf-layout-mobile-md md-col-2  lg-col-3 ">
-                                @foreach ($properties as $property)
+                                <?php $__currentLoopData = $properties; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $property): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="swiper-slide">
                                     <div class="box-house hover-img ">
                                         <div class="image-wrap">
-                                            <a href="{{  route('property.single', $property->id) }}" >
+                                            <a href="<?php echo e(route('property.single', $property->id)); ?>" >
                                                 <img class="lazyload"
-                                                     data-src="{{ asset(ltrim($property->image, '/')) }}"
-                                                     src="{{ asset('images/placeholder.jpg') }}"
+                                                     data-src="<?php echo e(asset(ltrim($property->image, '/'))); ?>"
+                                                     src="<?php echo e(asset('images/placeholder.jpg')); ?>"
                                                              alt="house">
 
                                             </a>
@@ -422,11 +431,11 @@
                                                 <li class="flat-tag text-4 bg-3 fw-6 text-white">For Sale</li>
                                             </ul>
                                             <div class="list-btn flex gap-8 ">
-                                                <a href="{{  route('property.single', $property->id) }}" class="btn-icon save hover-tooltip"><i
+                                                <a href="<?php echo e(route('property.single', $property->id)); ?>" class="btn-icon save hover-tooltip"><i
                                                         class="icon-save"></i>
                                                     <span class="tooltip">Add Favorite</span>
                                                 </a>
-                                                <a href="{{  route('property.single', $property->id) }}" class="btn-icon find hover-tooltip"><i
+                                                <a href="<?php echo e(route('property.single', $property->id)); ?>" class="btn-icon find hover-tooltip"><i
                                                         class="icon-find-plus"></i>
                                                     <span class="tooltip">Quick View</span>
                                                 </a>
@@ -434,18 +443,20 @@
                                         </div>
                                         <div class="content">
                                             <h5 class="title">
-                                                <a href="property-detail-v1.html">{{ $property->title }}</a>
+                                                <a href="property-detail-v1.html"><?php echo e($property->title); ?></a>
 
                                             </h5>
                                             <p class="location text-1 line-clamp-1 ">
                                             </p>
-                                            <i class="icon-location"></i> {{ $property->address }} {{ $property->country }}
+                                            <i class="icon-location"></i> <?php echo e($property->address); ?> <?php echo e($property->country); ?>
+
                                             <ul class="meta-list flex">
-                                                <li class="text-1 flex">{{ $property->type }}</li>
+                                                <li class="text-1 flex"><?php echo e($property->type); ?></li>
                                             </ul>
                                             <div class="bot flex justify-between items-center">
                                                 <h5 class="price">
-                                                    {{ $property->price }}
+                                                    <?php echo e($property->price); ?>
+
                                                 </h5>
                                                 <div class="wrap-btn flex">
                                                     <a href="#"
@@ -465,7 +476,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                             </div>
                             <div class="sw-pagination sw-pagination-mb-1 text-center d-lg-none d-block"></div>
@@ -2408,4 +2419,14 @@
 
     </div><!-- /.main-content -->
 
-</x-guest-layout>
+ <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal69dc84650370d1d4dc1b42d016d7226b)): ?>
+<?php $attributes = $__attributesOriginal69dc84650370d1d4dc1b42d016d7226b; ?>
+<?php unset($__attributesOriginal69dc84650370d1d4dc1b42d016d7226b); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal69dc84650370d1d4dc1b42d016d7226b)): ?>
+<?php $component = $__componentOriginal69dc84650370d1d4dc1b42d016d7226b; ?>
+<?php unset($__componentOriginal69dc84650370d1d4dc1b42d016d7226b); ?>
+<?php endif; ?>
+<?php /**PATH C:\Users\HP\Desktop\PROJECTS\chief-pro\resources\views/welcome.blade.php ENDPATH**/ ?>

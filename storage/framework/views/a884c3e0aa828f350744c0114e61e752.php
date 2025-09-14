@@ -55,7 +55,7 @@
                                 </div>
                                 <nav class="main-menu">
                                     <ul class="navigation ">
-                                        <li class="has-child"><a href="{{ route('welcome') }}">Home</a>
+                                        <li class="has-child"><a href="<?php echo e(route('welcome')); ?>">Home</a>
 
                                         </li>
 
@@ -133,7 +133,7 @@
                                                 Dashboards</a>
 
 
-                                            <a class="dropdown-item" href="{{route ('admin.property.review') }}">
+                                            <a class="dropdown-item" href="<?php echo e(route ('admin.property.review')); ?>">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -150,7 +150,7 @@
                                                         stroke-linejoin="round" />
                                                 </svg>
                                                 Reviews</a>
-                                            <a class="dropdown-item" href="{{route ('property.view') }}">
+                                            <a class="dropdown-item" href="<?php echo e(route ('property.view')); ?>">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -174,7 +174,7 @@
                                                 </svg>
                                                 My properties
                                             </a>
-                                            <a class="dropdown-item " href="{{route ('admin.property.add') }}">
+                                            <a class="dropdown-item " href="<?php echo e(route ('admin.property.add')); ?>">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -198,10 +198,10 @@
                                                         stroke-linejoin="round" />
                                                 </svg>
                                                 <div class="d-flex wrap-login">
-                                                    <a href="{{ route('login') }}" data-bs-toggle="modal">
+                                                    <a href="<?php echo e(route('login')); ?>" data-bs-toggle="modal">
                                                         login</a>
                                                     <span>/</span>
-                                                    <a href="{{ route('register') }}" data-bs-toggle="modal">
+                                                    <a href="<?php echo e(route('register')); ?>" data-bs-toggle="modal">
                                                         register </a>
                                                 </div>
                                             </div>
@@ -222,7 +222,7 @@
                                         </div>
                                     </div>
                                     <div class="btn-add">
-                                        <a class="tf-btn style-border pd-23" href="{{ route('admin.property.add') }}">Add property</a>
+                                        <a class="tf-btn style-border pd-23" href="<?php echo e(route('admin.property.add')); ?>">Add property</a>
                                     </div>
                                     <div class="mobile-button" data-bs-toggle="offcanvas" data-bs-target="#menu-mobile"
                                         aria-controls="menu-mobile">
@@ -244,7 +244,7 @@
                     <div class="menu-box">
                         <ul class="box-menu-dashboard">
                             <li class="nav-menu-item active">
-                                <a class="nav-menu-link" href="{{route ('admin.dashboard') }}">
+                                <a class="nav-menu-link" href="<?php echo e(route ('admin.dashboard')); ?>">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -294,7 +294,7 @@
 
 
                             <li class="nav-menu-item">
-                                <a class="nav-menu-link" href="{{route('admin.property.review')}} ">
+                                <a class="nav-menu-link" href="<?php echo e(route('admin.property.review')); ?> ">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -314,7 +314,7 @@
                                 </a>
                             </li>
                             <li class="nav-menu-item">
-                                <a class="nav-menu-link" href="{{route ('property.view') }}">
+                                <a class="nav-menu-link" href="<?php echo e(route ('property.view')); ?>">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -350,7 +350,7 @@
                                 </a>
                             </li>
                             <li class="nav-menu-item">
-                                <a class="nav-menu-link" href="{{route ('admin.property.add') }}">
+                                <a class="nav-menu-link" href="<?php echo e(route ('admin.property.add')); ?>">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -368,7 +368,7 @@
                                 </a>
                             </li>
                             <li class="nav-menu-item">
-                                <a class="nav-menu-link" href="{{ route('welcome') }}" data-bs-toggle="modal">
+                                <a class="nav-menu-link" href="<?php echo e(route('welcome')); ?>" data-bs-toggle="modal">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -391,7 +391,8 @@
             <!-- /.end sidebar dashboard -->
 
             <!-- .main-content -->
-           {{$slot}}
+           <?php echo e($slot); ?>
+
         </div>
 
     </div>
@@ -730,7 +731,7 @@
                                     <div id="sub-details" class="collapse" data-bs-parent="#dropdown-menu-two">
                                         <ul class="sub-mobile">
                                             <li class="menu-item">
-                                                <a href="{{route ('property.list') }}">>Property Details 1</a>
+                                                <a href="<?php echo e(route ('property.list')); ?>">>Property Details 1</a>
                                             </li>
                                             <li class="menu-item">
                                                 <a href="property-detail-v2.html">Property Details 2</a>
@@ -875,3 +876,4 @@
 
 <!-- Mirrored from themesflat.co/html/proty/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Dec 2024 13:55:25 GMT -->
 </html>
+<?php /**PATH C:\Users\HP\Desktop\PROJECTS\chief-pro\resources\views/layouts/app.blade.php ENDPATH**/ ?>

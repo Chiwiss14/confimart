@@ -72,7 +72,7 @@
                                 </div>
                                 <nav class="main-menu">
                                     <ul class="navigation ">
-                                        <li class="has-child current-menu"><a href="{{ route('welcome') }}">Home</a>
+                                        <li class="has-child current-menu"><a href="<?php echo e(route('welcome')); ?>">Home</a>
 
                                         </li>
                                         <li class="has-child style-2"><a href="#">Listing</a>
@@ -82,7 +82,7 @@
                                                 <li>
                                                     <a href="#">Listing Details</a>
                                                     <ul class="submenu2">
-                                                        <li><a href="{{ route('property.list') }}">Property Details</a>
+                                                        <li><a href="<?php echo e(route('property.list')); ?>">Property Details</a>
                                                         </li>
 
 
@@ -94,13 +94,13 @@
                                             <ul class="submenu">
 
 
-                                                <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                                                <li><a href="<?php echo e(route('dashboard')); ?>">Dashboard</a></li>
                                             </ul>
                                         </li>
                                         <li class="has-child "><a href="#">Signup/Login</a>
                                             <ul class="submenu">
-                                                <li><a href="{{ route('register') }}">Register</a></li>
-                                                <li><a href="{{ route('login') }}">Login</a></li>
+                                                <li><a href="<?php echo e(route('register')); ?>">Register</a></li>
+                                                <li><a href="<?php echo e(route('login')); ?>">Login</a></li>
 
 
                                             </ul>
@@ -137,7 +137,7 @@
                                             <i class="icon-CaretDown"></i>
                                         </div>
                                         <div class=" menu-user">
-                                            <a class="dropdown-item" href="{{ route('dashboard') }} ">
+                                            <a class="dropdown-item" href="<?php echo e(route('dashboard')); ?> ">
                                                 <svg width="20" height="20" viewBox="0 0 20 20"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -158,7 +158,7 @@
                                                         stroke-linejoin="round" />
                                                 </svg>
                                                 Dashboards</a>
-                                            <a class="dropdown-item" href="{{ route('admin.property.review') }} ">
+                                            <a class="dropdown-item" href="<?php echo e(route('admin.property.review')); ?> ">
                                                 <svg width="20" height="20" viewBox="0 0 20 20"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -175,7 +175,7 @@
                                                         stroke-linejoin="round" />
                                                 </svg>
                                                 Reviews</a>
-                                            <a class="dropdown-item" href="{{ route('property.view') }} ">
+                                            <a class="dropdown-item" href="<?php echo e(route('property.view')); ?> ">
                                                 <svg width="20" height="20" viewBox="0 0 20 20"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -199,7 +199,7 @@
                                                 </svg>
                                                 My properties
                                             </a>
-                                            <a class="dropdown-item " href="{{ route('admin.property.add') }}">
+                                            <a class="dropdown-item " href="<?php echo e(route('admin.property.add')); ?>">
                                                 <svg width="20" height="20" viewBox="0 0 20 20"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -261,7 +261,8 @@
             </div>
         </header>
 
-        {{ $slot }}
+        <?php echo e($slot); ?>
+
 
         <footer id="footer">
             <div class="tf-container">
@@ -907,3 +908,4 @@
 <!-- Mirrored from themesflat.co/html/proty/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Dec 2024 13:48:53 GMT -->
 
 </html>
+<?php /**PATH C:\Users\HP\Desktop\PROJECTS\chief-pro\resources\views/layouts/guest.blade.php ENDPATH**/ ?>

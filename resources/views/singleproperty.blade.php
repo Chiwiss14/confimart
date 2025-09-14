@@ -1,5 +1,5 @@
 <x-guest-layout>
-    
+
       <!-- flat-title -->
       <section class="flat-title ">
         <div class="tf-container">
@@ -83,14 +83,13 @@
                                 </ul>
                             </div>
                         </div>
-                     
+
                         <a href="#" class="tf-btn bg-color-primary pd-21 fw-6">Ask a question</a>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
     </section>
     <!-- section-property-detail -->
-    
 
 </x-guest-layout>
