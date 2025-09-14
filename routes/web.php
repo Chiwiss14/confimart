@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PropertyController as AdminPropertyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestimonialController;
+use App\Models\Testimonial;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -23,7 +25,8 @@ Route::get('/property-list', [HomeController::class, 'propertyList'])->name('pro
 Route::post('/add-reviews', [HomeController::class, 'store'])->name('review.store');
 Route::get('/property-details/{id}', [HomeController::class, 'detailsPage'])->name('property.single');
 
-
+Route::get('/testimonial', [TestimonialController::class, 'testimonialPage'])->name('testimonial');
+Route::post('/store-testimonial', [TestimonialController::class, 'store'])->name('testimonial.store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

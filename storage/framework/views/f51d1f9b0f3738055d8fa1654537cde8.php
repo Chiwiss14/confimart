@@ -953,272 +953,95 @@
             </div>
         </section><!-- /.section-neighborhoods -->
 
-        <!-- .section-listing -->
-        <section class="section-listing tf-spacing-1">
-            <div class="tf-container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="heading-section text-center mb-48">
-                            <h2 class="title text-anime-wave">Open Houses Listings</h2>
-                            <p class="text-1 wow animate__fadeInUp animate__animated" data-wow-duration="1.5s"
-                                data-wow-delay="0s">Thousands of luxury home enthusiasts just like you
-                                visit our website.
-                            </p>
-                        </div>
-                        <div class="swiper style-pagination tf-sw-mobile" data-screen="992" data-preview="1"
-                            data-space="15">
-                            <div class="swiper-wrapper tf-layout-mobile-lg lg-col-2 ">
-                                <div class="swiper-slide">
-                                    <div class="box-house hover-img style-list ">
-                                        <div class="image-wrap">
-                                            <a href="property-detail-v1.html">
-                                                <img class="lazyload"
-                                                    data-src="/assets/images//section/box-house-list-1.jpg"
-                                                    src="/assets/images//section/box-house-list-1.jpg" alt="">
-                                            </a>
-                                            <ul class="box-tag flex gap-8 ">
-                                                <li class="flat-tag text-4 bg-main fw-6 text-white">For Sale</li>
-                                            </ul>
-                                            <div class="list-btn flex gap-8 ">
-                                                <a href="#" class="btn-icon save hover-tooltip"><i
-                                                        class="icon-save"></i>
-                                                    <span class="tooltip">Add Favorite</span>
-                                                </a>
-                                                <a href="#" class="btn-icon find hover-tooltip"><i
-                                                        class="icon-find-plus"></i>
-                                                    <span class="tooltip">Quick View</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title">
-                                                <a href="property-detail-v1.html"> Elegant studio flat</a>
-                                            </h5>
-                                            <p class="location text-1 line-clamp-1 ">
-                                                <i class="icon-location"></i> Los Angeles, California 91604
-                                            </p>
-                                            <ul class="meta-list flex">
-                                                <li class="meta-item">
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-bed"></i>Beds<span>4</span>
-                                                    </div>
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-sqft"></i>Sqft<span>1150</span>
-                                                    </div>
-                                                </li>
-                                                <li class="meta-item">
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-bath"></i>Baths<span>2</span>
-                                                    </div>
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-garage"></i>Garage<span>2</span>
-                                                    </div>
-                                                </li>
 
-                                            </ul>
-                                            <div class="bot flex justify-between items-center">
-                                                <h5 class="price">
-                                                    $8.600
-                                                </h5>
-                                                <div class="wrap-btn flex">
-                                                    <a href="property-detail-v1.html"
-                                                        class="tf-btn style-border pd-4">Details</a>
-                                                </div>
-                                            </div>
+          <!-- .section-listing -->
+ <section class="section-listing tf-spacing-1">
+    <div class="tf-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="heading-section text-center mb-48">
+                    <h2 class="title text-anime-wave">Open Houses Listings</h2>
+                    <p class="text-1 wow animate__fadeInUp animate__animated" data-wow-duration="1.5s" data-wow-delay="0s">
+                        Thousands of luxury home enthusiasts just like you visit our website.
+                    </p>
+                </div>
+
+                <div class="swiper style-pagination tf-sw-mobile" data-screen="992" data-preview="1" data-space="15">
+                    <div class="swiper-wrapper tf-layout-mobile-lg lg-col-2 ">
+
+                        <?php $__empty_1 = true; $__currentLoopData = $properties; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $property): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                            <div class="swiper-slide">
+                                <div class="box-house hover-img style-list">
+                                    <div class="image-wrap">
+                                        <a href="<?php echo e(route('property.single', $property->id)); ?>">
+                                            <img class="lazyload"
+                                                 data-src="<?php echo e(asset($property->image)); ?>"
+                                                 src="<?php echo e(asset('images/placeholder.jpg')); ?>"
+                                                 alt="<?php echo e($property->title); ?>">
+                                        </a>
+                                        <ul class="box-tag flex gap-8">
+                                            <li class="flat-tag text-4 bg-main fw-6 text-white">
+                                                <?php echo e(ucfirst($property->status ?? 'For Sale')); ?>
+
+                                            </li>
+                                        </ul>
+                                        <div class="list-btn flex gap-8">
+                                            <a href="#" class="btn-icon save hover-tooltip"><i class="icon-save"></i>
+                                                <span class="tooltip">Add Favorite</span>
+                                            </a>
+                                            <a href="<?php echo e(route('property.single', $property->id)); ?>" class="btn-icon find hover-tooltip">
+                                                <i class="icon-find-plus"></i>
+                                                <span class="tooltip">Quick View</span>
+                                            </a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="box-house hover-img style-list ">
-                                        <div class="image-wrap">
-                                            <a href="property-detail-v1.html">
-                                                <img class="lazyload"
-                                                    data-src="/assets/images//section/box-house-list-2.jpg"
-                                                    src="/assets/images//section/box-house-list-2.jpg" alt="">
-                                            </a>
-                                            <ul class="box-tag flex gap-8 ">
-                                                <li class="flat-tag text-4 bg-main fw-6 text-white">For Sale</li>
-                                            </ul>
-                                            <div class="list-btn flex gap-8 ">
-                                                <a href="#" class="btn-icon save hover-tooltip"><i
-                                                        class="icon-save"></i>
-                                                    <span class="tooltip">Add Favorite</span>
-                                                </a>
-                                                <a href="#" class="btn-icon find hover-tooltip"><i
-                                                        class="icon-find-plus"></i>
-                                                    <span class="tooltip">Quick View</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title">
-                                                <a href="property-detail-v1.html">Elegant studio flat</a>
-                                            </h5>
-                                            <p class="location text-1 line-clamp-1 ">
-                                                <i class="icon-location"></i> Los Angeles, California 91604
-                                            </p>
-                                            <ul class="meta-list flex">
-                                                <li class="meta-item">
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-bed"></i>Beds<span>4</span>
-                                                    </div>
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-sqft"></i>Sqft<span>1150</span>
-                                                    </div>
-                                                </li>
-                                                <li class="meta-item">
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-bath"></i>Baths<span>2</span>
-                                                    </div>
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-garage"></i>Garage<span>2</span>
-                                                    </div>
-                                                </li>
 
-                                            </ul>
-                                            <div class="bot flex justify-between items-center">
-                                                <h5 class="price">
-                                                    $8.600
-                                                </h5>
-                                                <div class="wrap-btn flex">
-                                                    <a href="property-detail-v1.html"
-                                                        class="tf-btn style-border pd-4">Details</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="box-house hover-img style-list ">
-                                        <div class="image-wrap">
-                                            <a href="property-detail-v1.html">
-                                                <img class="lazyload"
-                                                    data-src="/assets/images//section/box-house-list-3.jpg"
-                                                    src="/assets/images//section/box-house-list-3.jpg"
-                                                    alt="">
-                                            </a>
-                                            <ul class="box-tag flex gap-8 ">
-                                                <li class="flat-tag text-4 bg-main fw-6 text-white">For Sale</li>
-                                            </ul>
-                                            <div class="list-btn flex gap-8 ">
-                                                <a href="#" class="btn-icon save hover-tooltip"><i
-                                                        class="icon-save"></i>
-                                                    <span class="tooltip">Add Favorite</span>
-                                                </a>
-                                                <a href="#" class="btn-icon find hover-tooltip"><i
-                                                        class="icon-find-plus"></i>
-                                                    <span class="tooltip">Quick View</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title">
-                                                <a href="property-detail-v1.html">Elegant studio flat</a>
-                                            </h5>
-                                            <p class="location text-1 line-clamp-1 ">
-                                                <i class="icon-location"></i> Los Angeles, California 91604
-                                            </p>
-                                            <ul class="meta-list flex">
-                                                <li class="meta-item">
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-bed"></i>Beds<span>4</span>
-                                                    </div>
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-sqft"></i>Sqft<span>1150</span>
-                                                    </div>
-                                                </li>
-                                                <li class="meta-item">
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-bath"></i>Baths<span>2</span>
-                                                    </div>
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-garage"></i>Garage<span>2</span>
-                                                    </div>
-                                                </li>
+                                    <div class="content">
+                                        <h5 class="title">
+                                            <a href="<?php echo e(route('property.single', $property->id)); ?>"><?php echo e($property->title); ?></a>
+                                        </h5>
+                                        <p class="location text-1 line-clamp-1">
+                                            <i class="icon-location"></i> <?php echo e($property->address); ?>, <?php echo e($property->country); ?>
 
-                                            </ul>
-                                            <div class="bot flex justify-between items-center">
-                                                <h5 class="price">
-                                                    $8.600
-                                                </h5>
-                                                <div class="wrap-btn flex">
-                                                    <a href="property-detail-v1.html"
-                                                        class="tf-btn style-border pd-4">Details</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="box-house hover-img style-list ">
-                                        <div class="image-wrap">
-                                            <a href="property-detail-v1.html">
-                                                <img class="lazyload"
-                                                    data-src="/assets/images//section/box-house-list-4.jpg"
-                                                    src="/assets/images//section/box-house-list-4.jpg"
-                                                    alt="">
-                                            </a>
-                                            <ul class="box-tag flex gap-8 ">
-                                                <li class="flat-tag text-4 bg-main fw-6 text-white">For Sale</li>
-                                            </ul>
-                                            <div class="list-btn flex gap-8 ">
-                                                <a href="#" class="btn-icon save hover-tooltip"><i
-                                                        class="icon-save"></i>
-                                                    <span class="tooltip">Add Favorite</span>
-                                                </a>
-                                                <a href="#" class="btn-icon find hover-tooltip"><i
-                                                        class="icon-find-plus"></i>
-                                                    <span class="tooltip">Quick View</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title">
-                                                <a href="property-detail-v1.html">Elegant studio flat</a>
-                                            </h5>
-                                            <p class="location text-1 line-clamp-1 ">
-                                                <i class="icon-location"></i> Los Angeles, California 91604
-                                            </p>
-                                            <ul class="meta-list flex">
-                                                <li class="meta-item">
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-bed"></i>Beds<span>4</span>
-                                                    </div>
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-sqft"></i>Sqft<span>1150</span>
-                                                    </div>
-                                                </li>
-                                                <li class="meta-item">
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-bath"></i>Baths<span>2</span>
-                                                    </div>
-                                                    <div class="text-9 flex"><i
-                                                            class="icon-garage"></i>Garage<span>2</span>
-                                                    </div>
-                                                </li>
+                                        </p>
 
-                                            </ul>
-                                            <div class="bot flex justify-between items-center">
-                                                <h5 class="price">
-                                                    $8.600
-                                                </h5>
-                                                <div class="wrap-btn flex">
-                                                    <a href="property-detail-v1.html"
-                                                        class="tf-btn style-border pd-4">Details</a>
-                                                </div>
+                                        <ul class="meta-list flex">
+                                            <li class="meta-item">
+                                                <div class="text-9 flex"><i class="icon-bed"></i>Beds<span><?php echo e($property->bedrooms ?? '-'); ?></span></div>
+                                                <div class="text-9 flex"><i class="icon-sqft"></i>Sqft<span><?php echo e($property->sqft ?? 'N/A'); ?></span></div>
+                                            </li>
+                                            <li class="meta-item">
+                                                <div class="text-9 flex"><i class="icon-bath"></i>Baths<span><?php echo e($property->bathrooms ?? '-'); ?></span></div>
+                                                <div class="text-9 flex"><i class="icon-garage"></i>Garage<span><?php echo e($property->garage ?? '-'); ?></span></div>
+                                            </li>
+                                        </ul>
+
+                                        <div class="bot flex justify-between items-center">
+                                            <h5 class="price">
+                                                ₦<?php echo e(number_format($property->price, 0)); ?>
+
+                                            </h5>
+                                            <div class="wrap-btn flex">
+                                                <a href="<?php echo e(route('property.single', $property->id)); ?>" class="tf-btn style-border pd-4">Details</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="sw-pagination sw-pagination-mb text-center mt-20 d-lg-none d-block"></div>
-                        </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                            <p class="text-center text-gray-500">No properties available at the moment.</p>
+                        <?php endif; ?>
+
                     </div>
 
+                    <div class="sw-pagination sw-pagination-mb text-center mt-20 d-lg-none d-block"></div>
                 </div>
             </div>
-        </section>
-        <!-- /.section-listing -->
+        </div>
+    </div>
+ </section>
+ <!-- /.section-listing -->
+
 
         <!-- section-work-together -->
         <section class="section-work-together ">
@@ -2166,256 +1989,56 @@
         </section>
         <!-- /.section-opinion -->
 
-        <!-- .section-testimonials -->
-        <div class="section-testimonials style-1 tf-spacing-1">
-            <div class="tf-container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="heading-section text-center mb-48">
-                            <h2 class="title text-anime-wave">Clients Testimonials</h2>
-                            <p class="text-1 wow animate__fadeInUp animate__animated" data-wow-duration="1.5s"
-                                data-wow-delay="0s">Thousands of luxury home enthusiasts just like you
-                                visit our website.
-                            </p>
-                        </div>
-                        <div class="tf-grid-layout md-col-3 loadmore-item-8">
-                            <div class="box-testimonials">
-                                <div class="wg-testimonial style-2">
-                                    <div class="ratings ">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <p class="text-1 description">Aenean orci lorem, pharetra ac imperdiet eget,
-                                        tristique ac magna. In aliquet efficitur turpis, et posuere tellus commodo
-                                        at. Morbi accumsan nulla id neque rutrum, et tempus dui venenatis. Quisque
-                                        dapibus metus ligula, id tempor nisl interdum vitae.</p>
-                                    <div class="author">
-                                        <div class="avatar">
-                                            <img src="/assets/images//avatar/testimonials-4.jpg" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="name">
-                                                <a href="#">Annette Black</a>
-                                            </h6>
-                                            <p class="text-2">CEO Themesflat</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wg-testimonial style-2">
-                                    <div class="ratings ">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <p class="text-1 description">In hac habitasse platea dictumst. Sed eleifend
-                                        aliquam dui quis convallis. Sed aliquet eros sit amet metus rhoncus bibendum
-                                        nec vel nunc. Nullam ac dapibus enim. Nulla rhoncus ante ante, nec lacinia
-                                        turpis consectetur non. Vivamus sit amet nunc leo.</p>
-                                    <div class="author">
-                                        <div class="avatar">
-                                            <img src="/assets/images//avatar/avt-png7.png" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="name">
-                                                <a href="#">Eleanor Pena</a>
-                                            </h6>
-                                            <p class="text-2">CEO Themesflat</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wg-testimonial style-2">
-                                    <div class="ratings ">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <p class="text-1 description">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit. Ut aliquam tempus urna id interdum. Proin iaculis erat id sapien
-                                        venenatis convallis. Nam et ullamcorper nibh. Nulla malesuada consectetur
-                                        sem ut varius. Fusce ornare tortor non maximus volutpat. Integer at
-                                        consequat turpis, vel aliquam neque. Suspendisse quis odio felis. Quisque
-                                        volutpat bibendum maximus. In porttitor semper ultrices.</p>
-                                    <div class="author">
-                                        <div class="avatar">
-                                            <img src="/assets/images//avatar/avt-png12.png" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="name">
-                                                <a href="#">Floyd Miles</a>
-                                            </h6>
-                                            <p class="text-2">CEO Themesflat</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-testimonials">
-                                <div class="wg-testimonial style-2">
-                                    <div class="ratings ">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <p class="text-1 description">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit. Ut aliquam tempus urna id interdum. Proin iaculis erat id sapien
-                                        venenatis convallis. Nam et ullamcorper nibh. Nulla malesuada consectetur
-                                        sem ut varius. Fusce ornare tortor non maximus volutpat. Integer at
-                                        consequat turpis, vel aliquam neque. Suspendisse quis odio felis. Quisque
-                                        volutpat bibendum maximus. In porttitor semper ultrices.</p>
-                                    <div class="author">
-                                        <div class="avatar">
-                                            <img src="/assets/images//avatar/avt-png12.png" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="name">
-                                                <a href="#">Floyd Miles</a>
-                                            </h6>
-                                            <p class="text-2">CEO Themesflat</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wg-testimonial style-2">
-                                    <div class="ratings ">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <p class="text-1 description">Vivamus at nisl ornare, vulputate turpis finibus,
-                                        posuere metus. Donec in placerat felis. Praesent ante tellus, dignissim nec
-                                        imperdiet ac.</p>
-                                    <div class="author">
-                                        <div class="avatar">
-                                            <img src="/assets/images//avatar/avt-png6.png" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="name">
-                                                <a href="#">Cody Fisher</a>
-                                            </h6>
-                                            <p class="text-2">CEO Themesflat</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wg-testimonial style-2">
-                                    <div class="ratings ">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <p class="text-1 description">Quisque tincidunt, nunc vitae maximus lobortis,
-                                        tellus risus fringilla mi, pulvinar feugiat lacus ipsum nec tortor. Aliquam
-                                        a venenatis orci, id bibendum eros. Pellentesque in ante rutrum, congue eros
-                                        vestibulum, commodo ex.</p>
-                                    <div class="author">
-                                        <div class="avatar">
-                                            <img src="/assets/images//avatar/avt-png5.png" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="name">
-                                                <a href="#">Ralph Edwards</a>
-                                            </h6>
-                                            <p class="text-2">CEO Themesflat</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-testimonials">
-                                <div class="wg-testimonial style-2">
-                                    <div class="ratings ">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <p class="text-1 description">"My experience with property management services
-                                        has exceeded expectations. They efficiently manage properties with a
-                                        professional and attentive approach in every situation. I feel reassured
-                                        that any issue will be resolved promptly and effectively."</p>
-                                    <div class="author">
-                                        <div class="avatar">
-                                            <img src="/assets/images//avatar/avt-png8.png" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="name">
-                                                <a href="#">Jacob Jones</a>
-                                            </h6>
-                                            <p class="text-2">CEO Themesflat</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wg-testimonial style-2">
-                                    <div class="ratings ">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <p class="text-1 description">Quisque tincidunt, nunc vitae maximus lobortis,
-                                        tellus risus fringilla mi, pulvinar feugiat lacus ipsum nec tortor. Aliquam
-                                        a venenatis orci, id bibendum eros. Pellentesque in ante rutrum, congue eros
-                                        vestibulum, commodo ex.</p>
-                                    <div class="author">
-                                        <div class="avatar">
-                                            <img src="/assets/images//avatar/avt-png5.png" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="name">
-                                                <a href="#">Ralph Edwards</a>
-                                            </h6>
-                                            <p class="text-2">CEO Themesflat</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wg-testimonial style-2">
-                                    <div class="ratings ">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <p class="text-1 description">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit. Ut aliquam tempus urna id interdum. Proin iaculis erat id sapien
-                                        venenatis convallis. Nam et ullamcorper nibh. Nulla malesuada consectetur
-                                        sem ut varius. Fusce ornare tortor non maximus volutpat. Integer at
-                                        consequat turpis, vel aliquam neque. Suspendisse quis odio felis. Quisque
-                                        volutpat bibendum maximus. In porttitor semper ultrices.</p>
-                                    <div class="author">
-                                        <div class="avatar">
-                                            <img src="/assets/images//avatar/avt-png12.png" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <h6 class="name">
-                                                <a href="#">Floyd Miles</a>
-                                            </h6>
-                                            <p class="text-2">CEO Themesflat</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="tf-btn bg-color-primary fw-7 mx-auto btn-loadmore view-more-button">Show
-                                more...
-                            </button>
-                        </div>
+       <!-- .section-testimonials -->
+ <div class="section-testimonials style-1 tf-spacing-1">
+    <div class="tf-container">
+        <div class="row">
 
-                    </div>
+            <div class="col-12">
+                <div class="heading-section text-center mb-48">
+                    <h2 class="title text-anime-wave">Clients Testimonials</h2>
+                    <p class="text-1 wow animate__fadeInUp animate__animated" data-wow-duration="1.5s"
+                        data-wow-delay="0s">Thousands of luxury home enthusiasts just like you
+                        visit our website.
+                    </p>
                 </div>
+
+                <div class="tf-grid-layout md-col-3 loadmore-item-8">
+                    <?php $__currentLoopData = $testimonials; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="box-testimonials">
+                            <div class="wg-testimonial style-2">
+                                <div class="ratings">
+                                    <?php for($i = 0; $i < 5; $i++): ?>
+                                        <i class="icon-start"></i>
+                                    <?php endfor; ?>
+                                </div>
+                                <p class="text-1 description">
+                                    <?php echo e($testimonial->message); ?>
+
+                                </p>
+                                <div class="author">
+                                    <div class="avatar">
+                                        <img src="<?php echo e(asset('assets/images/avatar/default.png')); ?>" alt="">
+                                    </div>
+                                    <div class="content">
+                                        <h6 class="name">
+                                            <a href="#"><?php echo e($testimonial->name); ?></a>
+                                        </h6>
+                                        <p class="text-2">Client</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+
+                <button class="tf-btn bg-color-primary fw-7 mx-auto btn-loadmore view-more-button">Show more...</button>
             </div>
         </div>
-        <!-- /.section-testimonials -->
+    </div>
+ </div>
+ <!-- /.section-testimonials -->
+
 
     </div><!-- /.main-content -->
 

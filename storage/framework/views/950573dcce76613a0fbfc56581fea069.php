@@ -11,7 +11,7 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8" />
     <!--[if IE ]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
-    <title>Chief-pro - Real Estate HTML Template</title>
+    <title>ConfiMart - Real Estate HTML Template</title>
 
     <meta name="description"
         content="Propty is a website specializing in buying and renting properties, connecting buyers and tenants with trusted property owners. With an easy-to-use interface and detailed information, Propty offers a fast and convenient property search experience.">
@@ -85,7 +85,7 @@
                                                         <li><a href="<?php echo e(route('property.list')); ?>">Property Details</a>
                                                         </li>
 
-
+                                                        <li><a href="<?php echo e(route('testimonial')); ?>">Testimonial</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -315,7 +315,7 @@
                                         </div>
                                         <h6 class="fw-4">
                                             <a href="#">
-                                                proty-support@gmail.com
+                                                nsirim61@gmail.com
                                             </a>
                                         </h6>
                                     </div>
@@ -470,7 +470,7 @@
                 </div>
                 <div class="col-12">
                     <div class="footer-bottom">
-                        <p>Copyright © 2024 <span class="fw-7">PROTY - REAL ESTATE</span> . Designed & Developed by
+                        <p>Copyright © 2024 <span class="fw-7">CONFIMART - REAL ESTATE</span> . Designed & Developed by
                             <a href="#">Themesflat</a>
                         </p>
                         <div class="wrap-social">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Property;
 use App\Models\Reviews;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class  HomeController extends Controller
@@ -16,8 +17,8 @@ class  HomeController extends Controller
 
   function welcomePage(){
     $properties= Property::all();
-    return view ('welcome',compact('properties'));
-    // return view ('welcome');
+    $testimonials = Testimonial::latest()->take(6)->get(); // show 6 latest
+    return view ('welcome',compact('properties','testimonials'));
  }
 
     function propertyPage(){
@@ -29,9 +30,31 @@ class  HomeController extends Controller
 
 
 
-    function propertyList(){
-        return view ('propertylist');
+    public function propertyList(Request $request)
+    {
+       $query = Property::query();
+
+    if ($request->filled('search')) {
+        $query->where('title', 'like', '%'.$request->search.'%')
+              ->orWhere('address', 'like', '%'.$request->search.'%');
     }
+
+    if ($request->filled('type')) {
+        $query->where('type', $request->type);
+    }
+
+    if ($request->filled('price')) {
+        $query->where('price', '<=', $request->price);
+    }
+
+    $properties = $query->paginate(9); // show 9 per page
+
+    return view('property-list', compact('properties'));
+  }
+
+
+
+
 
     function store(Request $request) {
 
