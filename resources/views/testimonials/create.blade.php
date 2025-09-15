@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="container py-5">
-        <h2 class="mb-4">Submit a Testimonial</h2>
+        <h2 class="mb-4">Submit Property Testimonial</h2>
 
         <form method="POST" action="{{ route('testimonial.store') }}" enctype="multipart/form-data">
             @csrf

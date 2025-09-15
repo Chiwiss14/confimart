@@ -9,65 +9,78 @@ use Illuminate\Http\Request;
 
 class  HomeController extends Controller
 {
-  function detailsPage($id){
-    $property = Property::find($id);
+    function detailsPage($id)
+    {
+        $property = Property::find($id);
 
-    return view('singleproperty', compact('property'));
-  }
+        return view('singleproperty', compact('property'));
+    }
 
-  function welcomePage(){
-    $properties= Property::all();
-    $testimonials = Testimonial::latest()->take(6)->get(); // show 6 latest
-    return view ('welcome',compact('properties','testimonials'));
- }
+    function welcomePage()
+    {
+        $properties = Property::all();
+        $testimonials = Testimonial::latest()->take(6)->get(); // show 6 latest
 
-    function propertyPage(){
-        $properties= Property::all();
+        // Fetch properties for sale (assuming a status of 'for_sale')
+        $forSaleProperties = Property::where('status', 'for_sale')
+            ->latest()
+            ->take(6) // Example: display 6 properties
+            ->get();
+
+        // Fetch properties for rent
+        $forRentProperties = Property::where('status', 'for_rent')
+            ->latest()
+            ->take(6)
+            ->get();
+        return view('welcome', compact('properties', 'testimonials', 'forSaleProperties', 'forRentProperties'));
+    }
+
+    function propertyPage()
+    {
+        $properties = Property::all();
 
 
-        return view ('properties', compact('properties'));
+        return view('properties', compact('properties'));
     }
 
 
 
     public function propertyList(Request $request)
     {
-       $query = Property::query();
+        $query = Property::query();
 
-    if ($request->filled('search')) {
-        $query->where('title', 'like', '%'.$request->search.'%')
-              ->orWhere('address', 'like', '%'.$request->search.'%');
+        if ($request->filled('search')) {
+            $query->where('title', 'like', '%' . $request->search . '%')
+                ->orWhere('address', 'like', '%' . $request->search . '%');
+        }
+
+        if ($request->filled('type')) {
+            $query->where('type', $request->type);
+        }
+
+        if ($request->filled('price')) {
+            $query->where('price', '<=', $request->price);
+        }
+
+        $properties = $query->paginate(9); // show 9 per page
+
+        return view('property-list', compact('properties'));
     }
 
-    if ($request->filled('type')) {
-        $query->where('type', $request->type);
-    }
-
-    if ($request->filled('price')) {
-        $query->where('price', '<=', $request->price);
-    }
-
-    $properties = $query->paginate(9); // show 9 per page
-
-    return view('property-list', compact('properties'));
-  }
 
 
 
 
-
-    function store(Request $request) {
+    function store(Request $request)
+    {
 
         $reviews = new Reviews();
-        $reviews->name=$request->name;
+        $reviews->name = $request->name;
         $reviews->email = $request->email;
-        $reviews->message =$request->message;
+        $reviews->message = $request->message;
 
         $reviews->save();
 
         return back();
     }
-
 }
-
-

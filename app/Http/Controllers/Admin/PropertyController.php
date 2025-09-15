@@ -38,6 +38,7 @@ class PropertyController extends Controller
             'country' => 'required|string',
             'type' => 'required|string',
             'address' => 'required|string',
+            'status' => 'required|in:for_sale,for_rent',
             'image' => 'required|mimes:jpg,jpeg,png|max:3048',
         ]);
 
@@ -48,6 +49,7 @@ class PropertyController extends Controller
         $property->type = $request->type;
         $property->price = $request->price;
         $property->country = $request->country;
+        $property->status = $request->status;
 
         $imagePath = $request->file('image')->store('images/properties', 'public');
         $property->image = '/storage/' . $imagePath;
@@ -76,12 +78,10 @@ class PropertyController extends Controller
         $property = Property::find($id); // This fetches the property by ID.
 
 
-        // dd(Property::find($id));
 
         return view('admin.singleproperty', ['property' => $property]);
 
-        // If property exists, proceed to render the view.
-        // return view('admin.singleproperty', compact('property'));
+        
     }
 
     function updateProperty(Request $request, $id)

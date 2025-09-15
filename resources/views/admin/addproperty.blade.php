@@ -8,8 +8,20 @@
                     <p class="text-center text-danger">{{ $err }}</p>
                 @endforeach
             </div>
+
             <form class="box-info-property" action="{{ route('admin.property.store') }}" method="POST"
                 enctype="multipart/form-data"> @csrf
+
+                <div class="widget-box-2 mb-20">
+                    <label for="status">Property Status:</label>
+                    <select name="status" id="status" class="w-full form-control nice-select">
+                        <option value="for_sale">For Sale</option>
+                        <option value="for_rent">For Rent</option>
+                    </select>
+                    @error('status')
+                        <p class="text-red-500 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
                 <div class="widget-box-2 mb-20">
                     <h3 class="title">Upload Media</h3>
                     <input type="file" name="image" class="form-control">

@@ -9,7 +9,7 @@
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
     <div class="container py-5">
-        <h2 class="mb-4">Submit a Testimonial</h2>
+        <h2 class="mb-4">Submit Property Testimonial</h2>
 
         <form method="POST" action="<?php echo e(route('testimonial.store')); ?>" enctype="multipart/form-data">
             <?php echo csrf_field(); ?>
